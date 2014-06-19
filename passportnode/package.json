@@ -1,0 +1,10 @@
+{
+	"dependencies" : {
+		"express" : "*",
+		"mongoose" : "*",
+		"body-parser": "*",
+		"passport":"*",
+		"passport-local":"*",
+		"bcrypt-nodejs":"*"
+	}
+}
