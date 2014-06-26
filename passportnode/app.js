@@ -1,11 +1,18 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
+
 
 mongoose.connect('mongodb://localhost/posts');
 
 var app = express();
+
 app.use(bodyParser());
+
+  app.use(passport.initialize());
+  app.use(passport.session());
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -22,6 +29,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
+
     next();
 });
 
@@ -29,7 +37,9 @@ var api = require('./api.js');
 	
 app.get('/users/:type?', api.get);
 
-app.post('/users', api.post);
+app.post('/users/register', api.post);
+
+app.post('/users/signin', api.signin);
 
 app.listen(8888);
 module.exports = app;

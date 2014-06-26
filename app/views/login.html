@@ -1,0 +1,27 @@
+<div class="container">
+
+      <form class="form-signin" role="form" ng-show = "changeForm">
+      	<button type="button" class="btn btn-default" ng-click = "changeForm = false">Sign Up!</button>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" class="form-control" placeholder="Email address" required autofocus ng-model="username">
+        <input type="password" class="form-control" placeholder="Password" required ng-model ="password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click = "SignIn()">Sign in</button>
+      </form>
+
+      <form class="form-signin" role="form" ng-show = "!changeForm">
+      	<button type="button" class="btn btn-default" ng-click = "changeForm = true">Sign In!</button>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="First Name" required autofocus ng-model = "firstname">
+        <input type="text" class="form-control" placeholder="Last Name"  ng-model = "lastname">
+        <input type="email" class="form-control" placeholder="Email address" ng-model="username">
+        <input type="password" class="form-control" placeholder="Password" required ng-model ="password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click = "SignUp()">Sign up</button>
+      </form>
+
+  </div> <!-- /container -->
